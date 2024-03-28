@@ -12,8 +12,6 @@ service = Service(driver_path)
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
-
-
 # Creating Locators - Amazon Sign In Page
 
 # Amazon Logo
