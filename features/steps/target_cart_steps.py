@@ -7,7 +7,7 @@ def open_target(context):
     context.driver.get('https://www.target.com/')
 
 @when("Click cart icon")
-def search_product(context):
+def click_cart_icon(context):
     context.driver.find_element(By.CSS_SELECTOR, "a[data-test='@web/CartLink']").click()
     sleep(6)
 
