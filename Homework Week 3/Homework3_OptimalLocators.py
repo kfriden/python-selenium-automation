@@ -41,3 +41,9 @@ driver.find_element(By.CSS_SELECTOR, "input#continue")
 
 # Conditions of use link
 driver.find_element(By.XPATH,"//a[text()='Conditions of Use']")
+
+# Privacy Notice link
+driver.find_element(By.XPATH,"//a[text()='Privacy Notice']")
+
+# Sign in link
+driver.find_element(By.CSS_SELECTOR, "a[href*='ap/signin?openid']")
