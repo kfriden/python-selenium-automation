@@ -2,14 +2,6 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
-@given('Open Target main page')
-def open_target(context):
-    context.driver.get('https://www.target.com/')
-
-@when("Click cart icon")
-def click_cart_icon(context):
-    context.driver.find_element(By.CSS_SELECTOR, "a[data-test='@web/CartLink']").click()
-    sleep(6)
 
 @then('Verify cart is empty message shows')
 def verify_cart_empty(context):
