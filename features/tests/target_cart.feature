@@ -5,3 +5,13 @@ Feature: Target cart tests
     Given Open Target main page
     When Click cart icon
     Then Verify cart is empty message shows
+
+
+  Scenario: User adds item to cart, verify item is in cart
+    Given Open Target main page
+    When Search for 'Mario'
+    Then Add any 'Mario' item to cart
+    Then Click Add to Cart on side menu
+    Then Click decline coverage button
+    When Click cart icon
+    Then Verify 'Mario' has been added to cart

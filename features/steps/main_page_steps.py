@@ -16,9 +16,9 @@ def sign_in(context):
     context.driver.find_element(By.CSS_SELECTOR, "a[data-test='@web/AccountLink']").click()
     sleep(6)
 
-@when("Search for 'coffee'")
-def search_product(context):
-    context.driver.find_element(*SEARCH_INPUT).send_keys('coffee')
+@when("Search for '{product}'")
+def search_product(context, product):
+    context.driver.find_element(*SEARCH_INPUT).send_keys(product)
     context.driver.find_element(*SEARCH_BTN).click()
     sleep(6)
 
