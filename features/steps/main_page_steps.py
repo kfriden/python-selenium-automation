@@ -14,13 +14,15 @@ def open_target(context):
 @when("Click sign in")
 def sign_in(context):
     context.driver.find_element(By.CSS_SELECTOR, "a[data-test='@web/AccountLink']").click()
-    sleep(6)
+    # sleep(6)
+    context.driver.implicitly_wait(4)
 
 @when("Search for '{product}'")
 def search_product(context, product):
     context.driver.find_element(*SEARCH_INPUT).send_keys(product)
     context.driver.find_element(*SEARCH_BTN).click()
-    sleep(6)
+    sleep(4)
+    # context.driver.implicitly_wait(4) THIS STEP FAILS
 
 @when("Click cart icon")
 def click_cart_icon(context):

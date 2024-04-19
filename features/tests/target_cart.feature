@@ -12,6 +12,5 @@ Feature: Target cart tests
     When Search for 'Mario'
     Then Add any 'Mario' item to cart
     Then Click Add to Cart on side menu
-    Then Click decline coverage button
-    When Click cart icon
+    Then Open Target Cart Page
     Then Verify 'Mario' has been added to cart

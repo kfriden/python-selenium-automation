@@ -5,7 +5,6 @@ from time import sleep
 @given('Open Target Circle page')
 def open_target(context):
     context.driver.get('https://www.target.com/circle')
-    sleep(4)
 
 @then('Verify 10 Circle benefits')
 def verify_10_circle_benefits(context):
