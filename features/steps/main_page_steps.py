@@ -9,7 +9,7 @@ CART_ICON = (By.CSS_SELECTOR, "a[data-test='@web/CartLink']")
 
 @given('Open Target main page')
 def open_target(context):
-    context.driver.get('https://www.target.com/')
+    context.app.main_page.open_main()
 
 @when("Click sign in")
 def sign_in(context):
@@ -19,10 +19,7 @@ def sign_in(context):
 
 @when("Search for '{product}'")
 def search_product(context, product):
-    context.driver.find_element(*SEARCH_INPUT).send_keys(product)
-    context.driver.find_element(*SEARCH_BTN).click()
-    sleep(4)
-    # context.driver.implicitly_wait(4) THIS STEP FAILS
+    context.app.header.search_product(product)
 
 @when("Click cart icon")
 def click_cart_icon(context):
