@@ -10,4 +10,5 @@ def verify_search_results(context, expected_item):
 
 @then('Verify that URL has {product}')
 def verify_search_page_url(context, product):
-    context.wait.until(EC.url_contains(product), message= f'URL does not contain {product}')
+    # context.driver.wait.until(EC.url_contains(product), message= f'URL does not contain {product}')
+    context.app.search_results_page.verify_partial_url(product)

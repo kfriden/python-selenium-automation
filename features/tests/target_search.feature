@@ -5,7 +5,7 @@ Feature: Search tests
     Given Open Target main page
     When Search for 'coffee'
     Then Verify search results are shown for coffee
-    Then Verify that URL has 'coffee'
+    Then Verify that URL has coffee
 
 
   Scenario Outline: User can search for a product

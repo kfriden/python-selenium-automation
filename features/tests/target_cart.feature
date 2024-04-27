@@ -9,8 +9,8 @@ Feature: Target cart tests
 
   Scenario: User adds item to cart, verify item is in cart
     Given Open Target main page
-    When Search for 'Mario'
-    Then Add any 'Mario' item to cart
+    When Search for 'tea'
+    Then Add any 'tea' item to cart
     Then Click Add to Cart on side menu
     Then Open Target Cart Page
-    Then Verify 'Mario' has been added to cart
+    Then Verify 'tea' has been added to cart

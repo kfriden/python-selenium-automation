@@ -13,9 +13,8 @@ def open_target(context):
 
 @when("Click sign in")
 def sign_in(context):
-    context.driver.find_element(By.CSS_SELECTOR, "a[data-test='@web/AccountLink']").click()
-    # sleep(6)
-    context.driver.implicitly_wait(4)
+    context.app.main_page.sign_in()
+
 
 @when("Search for '{product}'")
 def search_product(context, product):
