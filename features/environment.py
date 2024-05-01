@@ -13,14 +13,19 @@ def browser_init(context):
     service = Service(driver_path)
     context.driver = webdriver.Chrome(service=service)
 
+    # FIREFOX BROWSER
+    # service = Service(executable_path='A:/Python_Automation_Course_QA/python-selenium-automation/geckodriver.exe')
+    # context.driver = webdriver.Firefox(service=service)
+
     context.driver.maximize_window()
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.driver.wait = WebDriverWait(context.driver, timeout=15)
 
-
     context.app = Application(context.driver)
+
+
 def before_scenario(context, scenario):
     print('\nStarted scenario: ', scenario.name)
     browser_init(context)
