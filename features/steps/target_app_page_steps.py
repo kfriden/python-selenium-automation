@@ -29,5 +29,6 @@ def close(context):
 
 @then('Return to original window')
 def return_to_original_window(context):
+    sleep(5)
     context.app.target_app_page.switch_to_window_by_id(context.original_window)
     sleep(2)
