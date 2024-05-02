@@ -13,6 +13,10 @@ def browser_init(context):
     service = Service(driver_path)
     context.driver = webdriver.Chrome(service=service)
 
+    # driver_path = GeckoDriverManager().install()
+    # service = Service(driver_path)
+    # context.driver = webdriver.Firefox(service=service)
+
     # FIREFOX BROWSER
     # service = Service(executable_path='A:/Python_Automation_Course_QA/python-selenium-automation/geckodriver.exe')
     # context.driver = webdriver.Firefox(service=service)
