@@ -16,4 +16,4 @@ def verify_signin_form(context):
 
 @when('Store original window')
 def store_original_window(context):
-    context.app.base_page.get_current_window()
+    context.original_window = context.app.base_page.get_current_window()
