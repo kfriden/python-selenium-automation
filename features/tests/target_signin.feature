@@ -18,3 +18,12 @@ Feature: Target Sign in Page
     Then Verify Terms and Conditions page is opened
     And Close current page
     Then Return to original window
+
+  Scenario: Inputting incorrect username and password shows incorrect account message
+    Given Open Target main page
+    When Click sign in
+    When Click sign in on side nav bar
+    Then Input incorrect username unicorn45@gmail.com
+    Then Input incorrect password 12345
+    When Click login
+    Then Verify We cannot find your account message shows

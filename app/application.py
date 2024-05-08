@@ -7,6 +7,7 @@ from pages.search_results_page import SearchResultsPage
 from pages.target_app_page import TargetAppPage
 from pages.privacy_policy_page import PrivacyPolicyPage
 from pages.tc_page import TCPage
+from pages.help_page import HelpPage
 class Application:
 
     def __init__(self, driver):
@@ -19,5 +20,6 @@ class Application:
         self.target_app_page = TargetAppPage(driver)
         self.privacy_policy_page = PrivacyPolicyPage(driver)
         self.tc_page = TCPage(driver)
+        self.help_page = HelpPage(driver)
 
 

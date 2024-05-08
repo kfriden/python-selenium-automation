@@ -10,9 +10,9 @@ def browser_init(context, scenario_name):
     """
     :param context: Behave context
     """
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     # driver_path = GeckoDriverManager().install()
     # service = Service(driver_path)
@@ -29,20 +29,20 @@ def browser_init(context, scenario_name):
     # context.driver = webdriver.Firefox(service=service)
 
     # BROWSERSTACK CODE #
-    bs_user = 'kaitlynfriden_y2mXKl'
-    bs_key = 'eQHRTGhV6JqHDHTJNyFm'
-    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-
-    options = Options()
-    bstack_options = {
-        'os': 'Windows',
-        'osVersion': '10',
-        'browserName': 'Firefox',
-        'sessionName': scenario_name
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
-
+    # bs_user = 'kaitlynfriden_y2mXKl'
+    # bs_key = 'eQHRTGhV6JqHDHTJNyFm'
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    #
+    # options = Options()
+    # bstack_options = {
+    #     'os': 'Windows',
+    #     'osVersion': '10',
+    #     'browserName': 'Firefox',
+    #     'sessionName': scenario_name
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
+    #
     context.driver.maximize_window()
 
     context.driver.maximize_window()
@@ -64,8 +64,8 @@ def before_step(context, step):
 def after_step(context, step):
     if step.status == 'failed':
         print('\nStep failed: ', step)
-        context.app.base_page.save_screenshot(step)
+        # context.app.base_page.save_screenshot(step)
 
 
-def after_scenario(context, feature):
+def after_scenario(context):
     context.driver.quit()
