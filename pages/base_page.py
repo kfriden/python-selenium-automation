@@ -1,6 +1,8 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from support.logger import logger
+
 class BasePage:
 
     def __init__(self, driver):
@@ -8,15 +10,18 @@ class BasePage:
         self.wait = WebDriverWait(self.driver, timeout=10)
 
     def open_url(self, url):
+        logger.info(f'Opening url: {url}')
         self.driver.get(url)
 
     def find_element(self, *locator):
+        logger.info(f'Finding element with locator: {locator}')
         return self.driver.find_element(*locator)
 
     def find_elements(self, *locator):
         return self.driver.find_element(*locator)
 
     def click(self, *locator):
+        logger.info(f'Clicking element with locator: {locator}')
         self.find_element(*locator).click()
 
     def input_text(self, text, *locator):

@@ -6,7 +6,7 @@ Feature: Target cart tests
     When Click cart icon
     Then Verify cart is empty message shows
 
-
+  @smoke
   Scenario: User adds item to cart, verify item is in cart
     Given Open Target main page
     When Search for 'tea'

@@ -1,6 +1,7 @@
 # Created by Kait Kait at 4/4/2024
 Feature: Search tests
 
+  @smoke
   Scenario: User can search for coffee
     Given Open Target main page
     When Search for 'coffee'

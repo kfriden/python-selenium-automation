@@ -1,6 +1,7 @@
 # Created by Kait Kait at 4/4/2024
 Feature: Target Sign in Page
 
+  @smoke
   Scenario: Signed out user navigates to sign in page
     Given Open Target main page
     When Click sign in
