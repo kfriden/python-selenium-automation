@@ -7,6 +7,10 @@ from app.application import Application
 
 from support.logger import logger
 
+#  Run Behave tests with Allure results
+# behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/target_app_tests.feature
+# To export the allure JSON files created: allure serve ./(file name)/
+
 
 def browser_init(context, scenario_name):
     """
